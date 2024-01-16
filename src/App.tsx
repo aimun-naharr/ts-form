@@ -10,10 +10,9 @@ const App = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="">
       <Form onSubmit={handleSubmit(onSubmit) as SubmitHandler<FieldValues>}>
         <FormSection></FormSection>
-        <input type="text" />
       </Form>
     </div>
   );
