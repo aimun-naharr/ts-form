@@ -15,6 +15,6 @@
   [multiple],
   textarea,
   select {
-    @apply border border-purple-400 focus:border-purple-500 rounded focus:shadow-lg focus:shadow-purple-200;
+    @apply border border-gray-300 focus:border-purple-500 rounded focus:shadow-lg focus:shadow-purple-200;
   }
 }

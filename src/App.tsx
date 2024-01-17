@@ -1,9 +1,11 @@
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import "./App.css";
 import { Form, FormSection } from "./components/form";
+import { cn } from "./utils";
+import InputField from "./components/ui/InputField";
 
 const App = () => {
-  const { handleSubmit, errors } = useForm();
+  const { handleSubmit, errors, register } = useForm();
 
   const onSubmit = (data: FieldValues) => {
     console.log(data);
@@ -12,7 +14,14 @@ const App = () => {
   return (
     <div className="">
       <Form onSubmit={handleSubmit(onSubmit) as SubmitHandler<FieldValues>}>
-        <FormSection></FormSection>
+        <FormSection>
+          <InputField
+            register={{ ...register("name") }}
+            id="name"
+            label="Name"
+          />
+          <button type="submit">submit</button>
+        </FormSection>
       </Form>
     </div>
   );

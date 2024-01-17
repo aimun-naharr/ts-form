@@ -3,7 +3,7 @@ import { FormElementContext, TContext } from ".";
 import { cn } from "../../utils";
 import { Container } from "../layouts";
 
-export const FormSection = () => {
+export const FormSection = ({ children }) => {
   const { double } = useContext(FormElementContext) as TContext;
   console.log({ double });
   return (
@@ -11,22 +11,12 @@ export const FormSection = () => {
       <Container>
         {/* form container */}
         <div
-          className={cn("py-8 grid grid-cols-1 max-w-[500px] gap-4  mx-auto", {
+          className={cn("py-8 grid grid-cols-1 gap-4  mx-auto px-4 md:px-0", {
             "max-w-5xl md:grid-cols-2 ": double,
+            "max-w-md grid-cols-1 ": !double,
           })}
         >
-          <div>
-            <label className="block" htmlFor="name">
-              Name
-            </label>
-            <input className="w-full" type="text" name="name" id="name" />
-          </div>
-          <div>
-            <label className="block" htmlFor="name">
-              Name
-            </label>
-            <input className="w-full" type="text" name="name" id="name" />
-          </div>
+          {children}
         </div>
         {/* form container */}
       </Container>
